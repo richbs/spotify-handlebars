@@ -1,0 +1,27 @@
+{
+  "name": "recently-played-analysis",
+  "version": "0.0.1",
+  "description": "Analysis of your recently played Spotify tracks",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

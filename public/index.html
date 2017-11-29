@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Recently Played Analysis</title>
+    <link href="https://sp-bootstrap.global.ssl.fastly.net/8.0.0/sp-bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      .container-fluid {
+        margin: 3vw;
+      }
+      #login, #loggedin {
+        display: none;
+      }
+      .text-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 500px;
+      }
+      .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .row > * {
+        flex: 1;
+        /*width: 50%;*/
+      }
+      .bignumber {
+        color: #1ED760;
+        font-size: 80px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div id="login">
+        <h1>What have you been listening to?</h1>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      </div>
+      <div id="loggedin">
+        <div id="playlists">
+          <h2>
+            Food
+          </h2>
+        </div>
+      </div>
+    </div>
+    
+    <script id="playlist-template"  type="text/x-handlebars-template"> 
+      {{#each items}}
+      <p>{{name}}</p>
+      {{/each}}
+    </script>
+    
+    <script id="rp-template" type="text/x-handlebars-template">
+      <div>
+        <h3>Recently played tracks:</h3>
+        {{#each items}}
+        <iframe src='https://embed.spotify.com/?uri={{track.uri}}' width="300" height="75" frameborder="0" allowtransparency="true"></iframe>
+        {{/each}}
+      </div>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="./recently-played-analysis.js"></script>
+    <script src="./authenticate.js"></script>
+  </body>
+</html>
