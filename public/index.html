@@ -47,10 +47,12 @@
       </div>
     </div>
     
-    <script id="playlist-template"  type="text/x-handlebars-template"> 
+    <script id="playlist-template"  type="text/x-handlebars-template">
+    <ul>
       {{#each items}}
-      <p>{{name}}</p>
+      <li><a href="{{href}}/tracks">{{name}}</a></p>
       {{/each}}
+    </ul>
     </script>
     
     <script id="rp-template" type="text/x-handlebars-template">
